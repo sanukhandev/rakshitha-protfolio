@@ -1,6 +1,7 @@
 {
-  "name": "frontend",
+  "name": "rakshitha-portfolio",
   "version": "0.1.0",
+  "description": "Rakshitha's modern portfolio web app built with React, Tailwind CSS, Radix UI, and Lucide React icons.",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

@@ -1,9 +1,6 @@
-
 # Rakshitha Portfolio
 
 An interactive, modern portfolio web app for Rakshitha, built with React 18, CRACO, Tailwind CSS, Radix UI, and Lucide React icons. Showcases professional experience, projects, skills, and contact information with a beautiful, responsive design.
-
-
 
 ## ✨ Features
 
@@ -90,6 +87,3 @@ src/
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ---
-
-
-
