@@ -1,3 +1,26 @@
+/* Floating Tech Badges for Hero */
+.tech-badge {
+  position: absolute;
+  min-width: 60px;
+  padding: 0.5rem 1rem;
+  background: var(--white);
+  border: 2px solid var(--primary-color);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  pointer-events: none;
+  animation: float-badge 3.5s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  z-index: 3;
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-16px) scale(1.08); }
+}
 /* Import Poppins Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 

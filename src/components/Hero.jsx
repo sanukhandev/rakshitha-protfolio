@@ -25,7 +25,8 @@ const Hero = ({ data = {}, scrollY = 0 }) => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  // Faster typewriter: lower base delay
+  const [delta, setDelta] = useState(120 - Math.random() * 40);
 
   const name = data?.name ?? "Your Name";
   const social = data?.social ?? {
@@ -58,18 +59,19 @@ const Hero = ({ data = {}, scrollY = 0 }) => {
       ? full.substring(0, text.length - 1)
       : full.substring(0, text.length + 1);
 
-    const nextDelta = isDeleting ? Math.max(50, delta / 2) : delta;
+    // Faster deleting, faster typing
+    const nextDelta = isDeleting ? Math.max(30, delta / 2.5) : delta;
 
     const t = setTimeout(() => {
       setText(nextText);
 
       if (!isDeleting && nextText === full) {
         setIsDeleting(true);
-        setDelta(2000); // pause at end
+        setDelta(900); // shorter pause at end
       } else if (isDeleting && nextText === "") {
         setIsDeleting(false);
         setLoopNum((n) => n + 1);
-        setDelta(500);
+        setDelta(300);
       }
     }, nextDelta);
 
@@ -196,7 +198,7 @@ const Hero = ({ data = {}, scrollY = 0 }) => {
             <div className="profile-container">
               <div className="profile-image-wrapper">
                 <picture>
-                  <source srcSet="rc.webp" type="image/webp" />
+                  <source srcSet="rc.JPG" type="image/jpeg" />
                   <img
                     src="rc.JPG"
                     alt={`${name} — Software Engineer`}
@@ -206,7 +208,42 @@ const Hero = ({ data = {}, scrollY = 0 }) => {
                   />
                 </picture>
 
-                {/* Tech Stack Icons */}
+                {/* Floating Tech Badges */}
+                <span
+                  className="tech-badge"
+                  style={{
+                    top: "-30px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    "--delay": "0s",
+                  }}
+                >
+                  SPFX
+                </span>
+                <span
+                  className="tech-badge"
+                  style={{ top: "30%", left: "-40px", "--delay": "0.5s" }}
+                >
+                  React
+                </span>
+                <span
+                  className="tech-badge"
+                  style={{ bottom: "-30px", left: "30%", "--delay": "1s" }}
+                >
+                  JavaScript
+                </span>
+                <span
+                  className="tech-badge"
+                  style={{ bottom: "10%", right: "-40px", "--delay": "1.5s" }}
+                >
+                  TypeScript
+                </span>
+                <span
+                  className="tech-badge"
+                  style={{ top: "60%", right: "-30px", "--delay": "2s" }}
+                >
+                  Python
+                </span>
               </div>
             </div>
           </div>
