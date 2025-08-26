@@ -195,11 +195,16 @@ const Hero = ({ data = {}, scrollY = 0 }) => {
           <div className="hero-visual">
             <div className="profile-container">
               <div className="profile-image-wrapper">
-                <img
-                  src="rc.JPG"
-                  alt={`${name} — Software Engineer`}
-                  className="profile-image"
-                />
+                <picture>
+                  <source srcSet="rc.webp" type="image/webp" />
+                  <img
+                    src="rc.JPG"
+                    alt={`${name} — Software Engineer`}
+                    className="profile-image"
+                    width={340}
+                    height={340}
+                  />
+                </picture>
 
                 {/* Tech Stack Icons */}
               </div>

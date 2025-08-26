@@ -5,7 +5,10 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="theme-color" content="#BBDCE5" />
+  <!-- Preload hero/profile image for faster LCP -->
+  <link rel="preload" as="image" href="/rc.JPG" imagesrcset="/rc.webp 1x, /rc.jpg 1x" />
 
   <!-- SEO Meta Tags -->
   <title>Rakshitha Chandran - Software Engineer | SharePoint SPFx Developer | Dubai, UAE</title>
@@ -23,7 +26,7 @@
   <meta property="og:title" content="Rakshitha Chandran - Software Engineer | SharePoint SPFx Developer" />
   <meta property="og:description"
     content="Professional Software Engineer with 5+ years experience in SharePoint SPFx development, AI/ML, and full-stack solutions. Based in Dubai, UAE." />
-  <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+  <meta property="og:image" content="%PUBLIC_URL%/og-image.webp" />
   <meta property="og:site_name" content="Rakshitha Chandran Portfolio" />
 
   <!-- Twitter -->
@@ -32,7 +35,7 @@
   <meta property="twitter:title" content="Rakshitha Chandran - Software Engineer | SharePoint SPFx Developer" />
   <meta property="twitter:description"
     content="Professional Software Engineer with 5+ years experience in SharePoint SPFx development, AI/ML, and full-stack solutions. Based in Dubai, UAE." />
-  <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+  <meta property="twitter:image" content="%PUBLIC_URL%/og-image.webp" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -90,6 +93,16 @@
     </script>
 
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+    To fully optimize images:
+    1. Convert rc.jpg and og-image.jpg to WebP (rc.webp, og-image.webp) and place in public/.
+    2. In your React code, use <picture> for the hero/profile image:
+       <picture>
+         <source srcSet="/rc.webp" type="image/webp" />
+         <img src="/rc.jpg" alt="Rakshitha Chandran" width="340" height="340" className="profile-image" />
+       </picture>
+    3. Compress all images before upload.
+  -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 </head>
 
